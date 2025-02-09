@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markaza Kabab Arati services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
+        header {
+            background-color: #33485c;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-nav {
+            display: flex;
+            align-items: center;
+        }
+
+        header img {
+            height: 50px;
+            margin-right: 20px;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: white;
+            padding: 5px 10px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #28a745;
+            border-radius: 5px;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .auth-buttons a {
+            background-color: #28a745;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .auth-buttons a:hover {
+            background-color: #218838;
+        }
+
+        /* Hamburger Menu */
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Card Container */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            margin: 20px auto;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .card h3 {
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+
+        .card p {
+            color: #7f8c8d;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #33485c;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons i {
+            font-size: 1.5em;
+            margin: 0 10px;
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons i:hover {
+            color: #28a745;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #33485c;
+                position: absolute;
+                top: 60px;
+                left: 0;
+            }
+
+            nav a {
+                padding: 10px;
+                text-align: center;
+            }
+
+            .auth-buttons {
+                display: none;
+            }
+
+            .logo-nav {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+        
+        footer .contact-links {
+            margin: 10px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        footer .contact-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s ease;
+        }
+
+        footer .contact-links a:hover {
+            color: #28a745;
+        }
+
+        footer .contact-links i {
+            margin-right: 10px;
+            color: #28a745;
+        }
+         /* Hamburger Menu */
+         .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 10px;
+            background-image: url("images/aduu.jpeg");
+            background-size: cover;
+            background-position: center;
+            color: hsl(177, 25%, 83%);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            color: hsl(178, 90%, 61%);
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-nav">
+            <img src="images/logo2.png" alt="Darul Arqam Dawah Logo">
+            <nav id="nav-menu">
+                <a href="Home.html">Home</a>
+                <a href="Services.html">Services</a>
+                <a href="Contact US.html">Contact US</a>
+                <a href="Registr.html">Register</a>
+            </nav>
+            <div class="menu-icon" id="menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        <div class="auth-buttons">
+          <!--   <a href="Signup.html">Sign Up</a> -->
+            <a href="Login.html">Login</a>
+        </div>
+    </header>
+       
+    <main>
+        <section class="hero">
+            <h1>The solution of his ultimate knowledge</h1>
+            <h2 style="color: aquamarine;">Your trusted source for authentic Islamic knowledge and guidance</h2>
+        </section>
+
+    <h1 style="text-align: center; margin-top: 20px;">Explore Our Offerings</h1>
+    <div class="card-container">
+        <div class="card">
+            <img src="C:\Users\ALL Atoz\Downloads\Telegram Desktop\photo_2025-02-09_22-01-15.jpg"alt="Daa’imman Qubee Barachuu">
+            <h3>Daa’imman Qubee Barachuu</h3>
+            <p>Barnoota qubee Qur'ana daa’immanif karaa salphaa fi bareedaa tahen.</p>
+        </div>
+        <div class="card">
+            <img src="C:\Users\ALL Atoz\Downloads\Telegram Desktop\photo_2025-02-09_22-13-38.jpg"alt="Quraana Ijaan Dubbisuu">
+            <h3>Qur'ana Ijaan Dubbisuu</h3>
+            <p>Barnoota Quraana ijaan dubbisuu Yaroo gababaa keessatti dandeessisu...</p>
+        </div>
+
+        <div class="card">
+            <img src="C:\Users\ALL Atoz\Downloads\Telegram Desktop\photo_2025-02-04_22-56-30.jpg" alt="Leenjii Dawa’a">
+            <h3>Qur'ana hifzi</h3>
+            <p>Qur'ana hifzi haala adda taheen yaroo gabaabaa kessatti argachuu nibarbaadduu?...</p>
+        </div>
+
+
+        <div class="card">
+            <img src="C:\Users\ALL Atoz\Downloads\Telegram Desktop\photo_2025-02-09_22-16-42.jpg" alt="Hadiisa">
+            <h3>LENJI DAWA FI HADISA</h3>
+            <p>Hadiisa ustaazota muuxannoo Gahaafi ol’aanaa qabaniin kennama.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Follow Us:</p>
+        <div class="social-icons">
+            <a href="https://t.me/darul_arqam" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://facebook.com/darul_arqam" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://youtube.com/darul_arqam" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://tiktok.com/darul_arqam" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+        <p>Contact Us:</p>
+        <div class="contact-links">
+            <a href="tel:+251985252568"><i class="fas fa-phone"></i> +251985252568</a>
+            <a href="mailto:info@darularqam.com"><i class="fas fa-envelope"></i> info@darularqam.com</a>
+        </div>
+        <p>&copy; 2025 Darul Arqam Dawah. All rights reserved.</p>
+        <p>Powered by Mahamisha Oro</p>
+    </footer>
+
+    <script>
+        // Toggle the navigation menu on mobile devices
+        document.getElementById('menu-icon').addEventListener('click', function() {
+            var navMenu = document.getElementById('nav-menu');
+            if (navMenu.style.display === 'flex') {
+                navMenu.style.display = 'none';
+            } else {
+                navMenu.style.display = 'flex';
+            }
+        });
+    </script>
+</body>
+</html>

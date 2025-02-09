@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markaza kabab binu Arat- Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        header {
+            background-color: #33485c;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-nav {
+            display: flex;
+            align-items: center;
+        }
+
+        header img {
+            height: 50px;
+            margin-right: 20px;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: white;
+            padding: 5px 10px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #28a745;
+            border-radius: 5px;
+        }
+
+        .auth-buttons a {
+            background-color: #28a745;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .auth-buttons a:hover {
+            background-color: #13d43d;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #0056b3;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .input-group {
+            position: relative;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #0056b3;
+        }
+
+        input, select, button {
+            width: 90%;
+            padding: 10px 10px 10px 40px; /* Add padding for the icon */
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            padding: 10px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            background-color: #33485c;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .social-icons i {
+            font-size: 1.5em;
+            margin: 0 10px;
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons i:hover {
+            color: #28a745;
+        }
+
+        /* Floating Message Button */
+        .floating-message-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color:steelblue; ;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .floating-message-btn:hover {
+            background-color: #218838;
+        }
+
+        /* Message Box */
+        .message-box {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 300px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            display: none;
+            z-index: 1000;
+        }
+
+        .message-box h3 {
+            margin-top: 0;
+            color: #0056b3;
+        }
+
+        .message-box textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+
+        .message-box button {
+            margin-top: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .message-box button:hover {
+            background-color: #218838;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                flex-direction: column;
+                background-color: #33485c;
+            }
+
+            nav a {
+                padding: 10px;
+                text-align: center;
+            }
+
+            .menu-icon {
+                display: block;
+                cursor: pointer;
+            }
+        }
+
+        .text {
+            text-align: center;
+        }
+        footer .contact-links {
+            margin: 10px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        footer .contact-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s ease;
+        }
+
+        footer .contact-links a:hover {
+            color: #28a745;
+        }
+
+        footer .contact-links i {
+            margin-right: 10px;
+            color: #28a745;
+        }
+        .misha{
+            width: 0;
+             
+            padding:10px ;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-nav">
+            <img src="images/logo2.png" alt="Darul Arqam Dawah Logo">
+            <nav id="nav-menu">
+                <a href="Home.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="Contact US.html">Contact US</a>
+                <a href="Registr.html">Register</a>
+            </nav>
+           
+        </div>
+        <div class="auth-buttons">
+            <a href="Login.html">Login</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Login</h2>
+        <form action="#" method="post">
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <div class="text">
+            <a href="Registr.html">Don't have an account? Register</a>
+        </div>
+    </div>
+
+    <!-- Floating Message Button -->
+    <button class="floating-message-btn" id="floating-message-btn">
+        <i class="fas fa-comment-dots"></i>
+    </button>
+
+    <!-- Message Box -->
+    <div class="message-box" id="message-box">
+        <h3>Send Us a Message</h3>
+        <textarea placeholder="Type your message here..."></textarea>
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <footer>
+        <p>Follow Us:</p>
+        <div class="social-icons">
+            <a href="https://t.me/darul_arqam" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://facebook.com/darul_arqam" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://youtube.com/darul_arqam" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://tiktok.com/darul_arqam" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+        <p>Contact Us:</p>
+        <div class="contact-links">
+            <a href="tel:+251985252568"><i class="fas fa-phone"></i> +251985252568</a>
+            <a href="mailto:info@darularqam.com"><i class="fas fa-envelope"></i> info@darularqam.com</a>
+        </div>
+        <p>&copy; 2025 Darul Arqam Dawah. All rights reserved.</p>
+        <p>Powered by Mahamisha Oro</p>
+    </footer>
+
+    <script>
+        // Toggle Message Box
+        const floatingMessageBtn = document.getElementById('floating-message-btn');
+        const messageBox = document.getElementById('message-box');
+
+        floatingMessageBtn.addEventListener('click', () => {
+            messageBox.style.display = messageBox.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // Send Message Function
+        function sendMessage() {
+            const message = document.querySelector('.message-box textarea').value;
+            if (message.trim() !== '') {
+                alert('Message sent: ' + message);
+                document.querySelector('.message-box textarea').value = ''; // Clear the textarea
+                messageBox.style.display = 'none'; // Hide the message box
+            } else {
+                alert('Please enter a message.');
+            }
+        }
+    </script>
+</body>
+</html>

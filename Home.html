@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markaza kabab binu Arat- Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* General Styles */
+        body {  padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+          font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        /* Header */
+        header {
+            background-color: #33485c;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav {
+      display: flex;
+      gap: 20px;
+    }
+    nav a {
+      padding: 8px 12px;
+      font-weight: bold;
+      border-radius: 4px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    nav a:hover {
+      background-color: #28a745;
+      color: white;
+    }
+   
+
+        /* Hamburger Menu */
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 10px;
+            background-image: url("images/goota.jpg");
+            background-size: cover;
+            background-position: center;
+            color: hsl(178, 90%, 61%);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            color: hsl(178, 90%, 61%);
+        }
+
+        
+        /* Hero Section */
+        .mane {
+            text-align: center;
+            padding: 100px 10px;
+            background-image: url("images/");
+            background-color: rgba(17, 158, 247, 0.769);
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 20px;
+            color:#333
+        }
+
+        .mane h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .mane p {
+            font-size: 1.2em;
+            color: hsl(178, 90%, 61%);
+        }
+
+
+
+        /* Intro Section */
+        .intro {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .intro h2 {
+            color:#28a745;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .intro p {
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Apply Now Button */
+        .apply-now {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .apply-now a {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .apply-now a:hover {
+            background-color: #218838;
+        }
+
+        /* Services Section */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px 20px;
+        }
+
+        .service {
+            background: #f0f8ff;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .service h3 {
+            color: #0056b3;
+            margin-bottom: 10px;
+        }
+
+        .service p {
+            color: #0056b3;
+        }
+
+        /* About Section */
+        .about {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #e9f5e9;
+        }
+
+        .about h2 {
+            color: rgb(123, 167, 194);
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .about p {
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Image Section */
+        .image-section {
+            text-align: center;
+            padding: 20px;
+            position: relative;
+    
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #33485c;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons i {
+            font-size: 1.5em;
+            margin: 0 10px;
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons i:hover {
+            color: #203ed1;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #33485c;
+                position: absolute;
+                top: 60px;
+                left: 0;
+            }
+
+            nav a {
+                padding: 10px;
+                text-align: center;
+            }
+
+            .auth-buttons {
+                display: none;
+            }
+
+            .logo-nav {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+               
+            }
+        }
+          /* Institutions Section */
+.institutions {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f0f8ff;
+}
+
+.institutions h2 {
+    color: #28a745;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.institution-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.institution {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.institution:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.institution h3 {
+    color: #0056b3;
+    margin-bottom: 10px;
+}
+
+.institution p {
+    color: #333;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+/* Image Container */
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover img {
+    transform: scale(1.1);
+}
+
+/* Image Overlay */
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-overlay h3 {
+    font-size: 1.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Services Section */
+#services {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.service {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1 1 calc(33.333% - 40px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service:hover {
+    transform: translateY(-10px);
+}
+
+.service h3 {
+    color: #2980b9;
+    margin-bottom: 10px;
+}
+
+.service p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* About Section */
+.about {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1 1 60%;
+}
+
+.about-text p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.about-images {
+    flex: 1 1 35%;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.about-images img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-text, .about-images {
+        flex: 1 1 100%;
+    }
+
+    .about-images {
+        flex-direction: column;
+    }
+}
+.about {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.about p {
+    font-size: 16px;
+    color: #555;
+}
+
+h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Services Section */
+#services {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.service {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1 1 calc(33.333% - 40px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.service:hover {
+    transform: translateY(-10px);
+}
+
+.service h3 {
+    color: #2980b9;
+    margin-bottom: 10px;
+}
+
+.service p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Icons Styling */
+.icon {
+    font-size: 40px;
+    color: #2980b9;
+    margin-bottom: 10px;
+}
+.about-images {
+    flex: 1 1 35%;
+    display: flex;
+    gap: 10px;
+}
+
+.about-images img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Image Section */
+.image-section {
+    text-align: center;
+    margin: 20px 0;
+ 
+}
+
+.image-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .service {
+        flex: 1 1 calc(50% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    .service {
+        flex: 1 1 100%;
+    }
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .service {
+        flex: 1 1 calc(50% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    .service {
+        flex: 1 1 100%;
+    }
+}
+/* About Section */
+.about {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about h2 {
+    text-align: center;
+  
+    margin-bottom: 20px;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.about-text {
+   
+    
+    flex: 1 1 100%;
+
+}
+
+.about-text p {
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+.about-images {
+    flex: 1 1 35%;
+    display: flex;
+    gap: 10px;
+}
+
+.about-images img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-text, .about-images {
+        flex: 1 1 100%;
+    }
+
+    .about-images {
+        flex-direction: column;
+    }
+}
+/* About Section */
+.about {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1 1 60%;
+}
+
+.about-text p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.about-images {
+    flex: 1 1 35%;
+    display: flex;
+    gap: 10px;
+}
+
+.about-images img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* More Link Styling */
+.more-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #218838;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.more-link:hover {
+    color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-text, .about-images {
+        flex: 1 1 100%;
+    }
+
+    .about-images {
+        flex-direction: column;
+    }
+}
+.logo-nav {
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    height: 50px;
+    margin-right: 20px;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    padding: 5px 10px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #28a745;
+    border-radius: 5px;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.auth-buttons a {
+    background-color: #28a745;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #dfd56a;
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+
+    nav a {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .auth-buttons {
+        display: none;
+    }
+
+    .logo-nav {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+footer .contact-links {
+            margin: 10px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        footer .contact-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s ease;
+        }
+
+        footer .contact-links a:hover {
+            color: #28a745;
+        }
+
+        footer .contact-links i {
+            margin-right: 10px;
+            color: #28a745;
+        }
+   
+        
+        /* Floating Message Button */
+        .floating-message-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: steelblue;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .floating-message-btn:hover {
+            background-color: #218838;
+        }
+
+        /* Message Box */
+        .message-box {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 300px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            display: none;
+            z-index: 1000;
+        }
+
+        .message-box h3 {
+            margin-top: 0;
+            color: #0056b3;
+        }
+
+        .message-box textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+
+        .message-box button {
+            margin-top: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .message-box button:hover {
+            background-color: #218838;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                flex-direction: column;
+                background-color: #33485c;
+            }
+
+            nav a {
+                padding: 10px;
+                text-align: center;
+            }
+
+            .menu-icon {
+                display: block;
+                cursor: pointer;
+            }
+        }
+
+        .text {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-nav">
+            <img src="images/logo2.png" alt="Darul Arqam Dawah Logo">
+
+            <nav id="nav-menu">
+                <a href="Home.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="Contact US.html">Contact US</a>
+                <a href="Registr.html">Register</a>
+            </nav>
+            <div class="menu-icon" id="menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+       <!-- Floating Message Button -->
+    <button class="floating-message-btn" id="floating-message-btn">
+        <i class="fas fa-comment-dots"></i>
+    </button>
+
+    <!-- Message Box -->
+    <div class="message-box" id="message-box">
+        <h3>Send Us a Message</h3>
+        <textarea placeholder="Type your message here..."></textarea>
+        <button onclick="sendMessage()">Send</button>
+    </div>
+            </a>
+            <div class="auth-buttons">
+            <a href="Login.html">Login</a>
+        </div>
+   
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Spreading the Message of Islam</h1>
+            <h2 style="color: aquamarine;">Your trusted source for authentic Islamic knowledge and guidance</h2>
+        </section>
+
+        <section class="intro">
+            <h2>Apply for Our Course</h2>
+            <p>Our comprehensive course is designed to help you achieve your goals with expert guidance and practical strategies.</p>
+        </section>
+
+        <div class="apply-now">
+            <a href="Registr.html">Apply Now</a>
+        </div>
+        <section id="services">
+            <h2>Explore Our Offerings</h2>
+            <div class="services">
+                <div class="service">
+                    <i class="fas fa-quran icon"></i>
+                    <h3>Quran Classes</h3>
+                    <p>Learn to read and understand the Quran with expert guidance.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-book-reader icon"></i>
+                    <h3>Islamic Lectures</h3>
+                    <p>Join our lectures to deepen your understanding of Islamic teachings.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-hands-helping icon"></i>
+                    <h3>Community Support</h3>
+                    <p>We provide support and resources to help the community thrive.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-hand-holding-heart icon"></i>
+                    <h3>Charity Programs</h3>
+                    <p>Participate in our charity programs to help those in need.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-users icon"></i>
+                    <h3>Youth Programs</h3>
+                    <p>Engage in activities designed to empower and educate the youth.</p>
+                </div>
+            </div>
+        </section>
+
+        <main>
+            <!-- About Section -->
+            <section class="about">
+                <h2>About Us</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <!-- Add "More" link here -->
+                        <h2>Darul Arqam Dawah is dedicated to providing valuable resources, educational programs, and events to help individuals deepen their understanding of Islam. Join us on this journey of learning and self-discovery.</h2>
+                        
+                        <a href="about.html" class="more-link">Read More</a>
+                    </div>
+                    <div class="about-images">
+                        <img src="images/wedding..jpg" alt="About Image 1">
+                       
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+            <script src="script.js"></script>
+        </body>
+        </html>
+            <section class="institutions">
+                <h2>Our Associated Institutions</h2>
+                <div class="institution-list">
+                    <!-- BURA JIREGNA School -->
+                    <div class="institution">
+                        <div class="image-container">
+                            <img src="C:\Users\ALL Atoz\Downloads\Telegram Desktop\photo_2025-02-09_22-04-12.jpg" alt="BURA JIREGNA School">
+                            <div class="image-overlay">
+                                <h3>BURA JIREGNA School</h3>
+                            </div>
+                        </div>
+                        <p>BURA JIREGNA School is dedicated to providing quality education and fostering Islamic values among students. Our mission is to nurture young minds and prepare them for a successful future.</p>
+                    </div>
+    
+                    <!-- Markaza Kabab Arati -->
+                    <div class="institution">
+                        <div class="image-container">
+                            <img src="images/kabab2.jpg" alt="Markaza Kabab Arati">
+                            <div class="image-overlay">
+                                <h3>Markaza Kabab Arati</h3>
+                            </div>
+                        </div>
+                        <p>Markaza Kabab Arati is a community center focused on Islamic teachings, community development, and social welfare programs. We aim to empower individuals and strengthen the community through education and support.</p>
+                    </div>
+                    <!-- Add more institutions if needed -->
+                </div>
+            </section>
+        </main>
+        <section class="mane">
+            <h1>Today's action is tomorrow's change</h1>
+            <p style="color: rgb(238, 241, 244);">Every journey begins with one decision. Take that step today, and start moving toward the life you envision.</p>
+        </section>
+
+        <script>
+            // JavaScript for interactive elements (if needed)
+            document.addEventListener('DOMContentLoaded', function () {
+                const images = document.querySelectorAll('.image-container img');
+                images.forEach(image => {
+                    image.addEventListener('mouseover', () => {
+                        image.nextElementSibling.style.opacity = '1';
+                    });
+                    image.addEventListener('mouseout', () => {
+                        image.nextElementSibling.style.opacity = '0';
+                    });
+                });
+            });
+        </script>
+    </body>
+    </html>
+    
+
+    <script>
+        // Toggle the navigation menu on mobile devices
+        document.getElementById('menu-icon').addEventListener('click', function() {
+            var navMenu = document.getElementById('nav-menu');
+            if (navMenu.style.display === 'flex') {
+                navMenu.style.display = 'none';
+            } else {
+                navMenu.style.display = 'flex';
+            }
+        });
+        // Add interactivity to services
+document.querySelectorAll('.service').forEach(service => {
+    service.addEventListener('click', () => {
+        // Toggle a class for visual feedback
+        service.classList.toggle('active');
+
+        // Optional: Display an alert with the service name
+        const serviceName = service.querySelector('h3').textContent;
+        alert(`You clicked on: ${serviceName}`);
+    });
+});
+    // Toggle Message Box
+    const floatingMessageBtn = document.getElementById('floating-message-btn');
+        const messageBox = document.getElementById('message-box');
+
+        floatingMessageBtn.addEventListener('click', () => {
+            messageBox.style.display = messageBox.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // Send Message Function
+        function sendMessage() {
+            const message = document.querySelector('.message-box textarea').value;
+            if (message.trim() !== '') {
+                alert('Message sent: ' + message);
+                document.querySelector('.message-box textarea').value = ''; // Clear the textarea
+                messageBox.style.display = 'none'; // Hide the message box
+            } else {
+                alert('Please enter a message.');
+            }
+        }
+      
+
+
+ 
+    </script>
+</body>
+</html>
+    
+
+   
+
+    <script>
+        // Existing script remains the same
+    </script>
+     <footer>
+        <p>Follow Us:</p>
+        <div class="social-icons">
+            <a href="https://t.me/darul_arqam" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://facebook.com/darul_arqam" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://youtube.com/darul_arqam" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://tiktok.com/darul_arqam" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+        <p>Contact Us:</p>
+        <div class="contact-links">
+            <a href="tel:+251985252568"><i class="fas fa-phone"></i> +251985252568</a>
+            <a href="mailto:info@darularqam.com"><i class="fas fa-envelope"></i> info@darularqam.com</a>
+        </div>
+        <p>&copy; 2025 Darul Arqam Dawah. All rights reserved.</p>
+        <p>Powered by Mahamisha Oro</p>
+    </footer>
+</body>
+</html>

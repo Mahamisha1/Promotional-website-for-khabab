@@ -1,0 +1,91 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Media Icons</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f4f4f9;
+      margin: 0;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      text-decoration: none;
+      color: white;
+      border-radius: 50%;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.1);
+    }
+
+    .facebook {
+      background-color: #4267B2;
+    }
+
+    .facebook:hover {
+      background-color: #365899;
+    }
+
+    .twitter {
+      background-color: #1DA1F2;
+    }
+
+    .twitter:hover {
+      background-color: #0d95e8;
+    }
+
+    .instagram {
+      background: radial-gradient(circle at 30% 30%, #fdf497, #fdf497, #fd5949, #d6249f, #285AEB);
+    }
+
+    .instagram:hover {
+      filter: brightness(1.1);
+    }
+
+    .linkedin {
+      background-color: #0077B5;
+    }
+
+    .linkedin:hover {
+      background-color: #005582;
+    }
+
+    .icon {
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="social-icons">
+    <a href="https://facebook.com" target="_blank" class="facebook" title="Facebook">
+      <span class="icon">F</span>
+    </a>
+    <a href="https://twitter.com" target="_blank" class="twitter" title="Twitter">
+      <span class="icon">T</span>
+    </a>
+    <a href="https://instagram.com" target="_blank" class="instagram" title="Instagram">
+      <span class="icon">I</span>
+    </a>
+    <a href="https://linkedin.com" target="_blank" class="linkedin" title="LinkedIn">
+      <span class="icon">L</span>
+    </a>
+  </div>
+</body>
+</html>
