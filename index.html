@@ -1047,85 +1047,13 @@ footer .contact-links {
             <p style="color: rgb(238, 241, 244);">Every journey begins with one decision. Take that step today, and start moving toward the life you envision.</p>
         </section>
 
-        <script>
-            // JavaScript for interactive elements (if needed)
-            document.addEventListener('DOMContentLoaded', function () {
-                const images = document.querySelectorAll('.image-container img');
-                images.forEach(image => {
-                    image.addEventListener('mouseover', () => {
-                        image.nextElementSibling.style.opacity = '1';
-                    });
-                    image.addEventListener('mouseout', () => {
-                        image.nextElementSibling.style.opacity = '0';
-                    });
-                });
-            });
-        </script>
-    </body>
-    </html>
-    
-
-    <script>
-        // Toggle the navigation menu on mobile devices
-        document.getElementById('menu-icon').addEventListener('click', function() {
-            var navMenu = document.getElementById('nav-menu');
-            if (navMenu.style.display === 'flex') {
-                navMenu.style.display = 'none';
-            } else {
-                navMenu.style.display = 'flex';
-            }
-        });
-        // Add interactivity to services
-document.querySelectorAll('.service').forEach(service => {
-    service.addEventListener('click', () => {
-        // Toggle a class for visual feedback
-        service.classList.toggle('active');
-
-        // Optional: Display an alert with the service name
-        const serviceName = service.querySelector('h3').textContent;
-        alert(`You clicked on: ${serviceName}`);
-    });
-});
-    // Toggle Message Box
-    const floatingMessageBtn = document.getElementById('floating-message-btn');
-        const messageBox = document.getElementById('message-box');
-
-        floatingMessageBtn.addEventListener('click', () => {
-            messageBox.style.display = messageBox.style.display === 'block' ? 'none' : 'block';
-        });
-
-        // Send Message Function
-        function sendMessage() {
-            const message = document.querySelector('.message-box textarea').value;
-            if (message.trim() !== '') {
-                alert('Message sent: ' + message);
-                document.querySelector('.message-box textarea').value = ''; // Clear the textarea
-                messageBox.style.display = 'none'; // Hide the message box
-            } else {
-                alert('Please enter a message.');
-            }
-        }
-      
-
-
- 
-    </script>
-</body>
-</html>
-    
-
-   
-
-    <script>
-        // Existing script remains the same
-    </script>
-     <footer>
+    <footer>
         <p>Follow Us:</p>
         <div class="social-icons">
-            <a href="https://t.me/darul_arqam" target="_blank"><i class="fa-brands fa-telegram"></i></a>
-            <a href="https://facebook.com/darul_arqam" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://youtube.com/darul_arqam" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://tiktok.com/darul_arqam" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://t.me/+6PKgSzINV0VkOTI0" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://www.facebook.com/share/159vkALX6x/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.youtube.com/@Markaza1442" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@khabbaabibnu4?_t=ZM-8uGHS2mivoc&_r=1" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
         </div>
         <p>Contact Us:</p>
         <div class="contact-links">
@@ -1135,5 +1063,69 @@ document.querySelectorAll('.service').forEach(service => {
         <p>&copy; 2025 Darul Arqam Dawah. All rights reserved.</p>
         <p>Powered by Mahamisha Oro</p>
     </footer>
+    <script>
+        // JavaScript for interactive elements (if needed)
+        document.addEventListener('DOMContentLoaded', function () {
+            const images = document.querySelectorAll('.image-container img');
+            images.forEach(image => {
+                image.addEventListener('mouseover', () => {
+                    image.nextElementSibling.style.opacity = '1';
+                });
+                image.addEventListener('mouseout', () => {
+                    image.nextElementSibling.style.opacity = '0';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+<script>
+    // Toggle the navigation menu on mobile devices
+    document.getElementById('menu-icon').addEventListener('click', function() {
+        var navMenu = document.getElementById('nav-menu');
+        if (navMenu.style.display === 'flex') {
+            navMenu.style.display = 'none';
+        } else {
+            navMenu.style.display = 'flex';
+        }
+    });
+    // Add interactivity to services
+document.querySelectorAll('.service').forEach(service => {
+service.addEventListener('click', () => {
+    // Toggle a class for visual feedback
+    service.classList.toggle('active');
+
+    // Optional: Display an alert with the service name
+    const serviceName = service.querySelector('h3').textContent;
+    alert(`You clicked on: ${serviceName}`);
+});
+});
+// Toggle Message Box
+const floatingMessageBtn = document.getElementById('floating-message-btn');
+    const messageBox = document.getElementById('message-box');
+
+    floatingMessageBtn.addEventListener('click', () => {
+        messageBox.style.display = messageBox.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Send Message Function
+    function sendMessage() {
+        const message = document.querySelector('.message-box textarea').value;
+        if (message.trim() !== '') {
+            alert('Message sent: ' + message);
+            document.querySelector('.message-box textarea').value = ''; // Clear the textarea
+            messageBox.style.display = 'none'; // Hide the message box
+        } else {
+            alert('Please enter a message.');
+        }
+    }
+  
+
+
+
+</script>
+
 </body>
 </html>
