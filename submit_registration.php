@@ -31,9 +31,9 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param("ssssssss", $first_name, $last_name, $phone, $password, $gender, $age, $education, $course);
 
 if ($stmt->execute()) {
-    echo "Registration successful!";
+    echo "✅ Registration successful!";
 } else {
-    echo "Error: " . $stmt->error;
+    echo "❌ Error: " . $stmt->error;
 }
 
 $stmt->close();

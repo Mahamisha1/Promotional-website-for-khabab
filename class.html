@@ -1,504 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Markaza Kabab Binu Arat - Home</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Website</title>
+  <link rel="stylesheet" href="styles.css">
   <style>
-    /* ====== General Styles ====== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    
-    /* ====== Header & Navbar ====== */
-    header {
-      background-color: #33485c;
-      color: white;
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: relative;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-    }
-    .logo img {
-      height: 50px;
-      margin-right: 15px;
-    }
-    nav {
-      display: flex;
-      gap: 20px;
-    }
-    nav a {
-      padding: 8px 12px;
-      font-weight: bold;
-      border-radius: 4px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    nav a:hover {
-      background-color: #28a745;
-      color: white;
-    }
-    .auth-buttons a {
-      background-color: #28a745;
-      padding: 8px 15px;
-      border-radius: 4px;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-    .auth-buttons a:hover {
-      background-color: #218838;
-    }
-    .menu-icon {
-      display: none;
-      font-size: 24px;
-      cursor: pointer;
-    }
-    
-    /* ====== Hero Section ====== */
-    .hero {
-      text-align: center;
-      padding: 100px 20px;
-      background: url('images/got.jpg') no-repeat center center/cover;
-      color: #f0f0f0;
-    }
-    .hero h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-    }
-    .hero h2 {
-      font-size: 1.5em;
-      margin-bottom: 20px;
-      color: aquamarine;
-    }
-    
-    /* ====== Intro & Apply Now ====== */
-    .intro {
-      text-align: center;
-      padding: 40px 20px;
-    }
-    .intro h2 {
-      color: #28a745;
-      font-size: 2em;
-      margin-bottom: 10px;
-    }
-    .apply-now {
-      text-align: center;
-      margin: 20px 0;
-    }
-    .apply-now a {
-      background-color: #28a745;
-      padding: 15px 30px;
-      font-size: 1.2em;
-      font-weight: bold;
-      color: white;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-    .apply-now a:hover {
-      background-color: #218838;
-    }
-    
-    /* ====== Services Section ====== */
-    #services {
-      padding: 40px 20px;
-      background-color: #fff;
-      margin: 20px auto;
-      max-width: 1200px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    #services h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #2c3e50;
-    }
-    .services {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-    .service {
-      background: #ecf0f1;
-      padding: 20px;
-      border-radius: 8px;
-      flex: 1 1 calc(33.333% - 40px);
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
-    .service:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    }
-    .service i {
-      font-size: 40px;
-      color: #2980b9;
-      margin-bottom: 10px;
-    }
-    .service h3 {
-      color: #2980b9;
-      margin-bottom: 10px;
-    }
-    .service p {
-      font-size: 14px;
-      color: #555;
-    }
-    
-    /* ====== About Section ====== */
-    .about {
-      padding: 40px 20px;
-      background-color: #fff;
-      margin: 20px auto;
-      max-width: 1200px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .about h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #2c3e50;
-    }
-    .about-content {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 20px;
-    }
-    .about-text {
-      flex: 1 1 60%;
-    }
-    .about-text p {
-      font-size: 16px;
-      color: #555;
-      line-height: 1.8;
-      margin-bottom: 10px;
-    }
-    .about-text .more-link {
-      display: inline-block;
-      margin-top: 10px;
-      color: #28a745;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-    .about-text .more-link:hover {
-      color: #218838;
-    }
-    .about-images {
-      flex: 1 1 35%;
-      display: flex;
-      justify-content: center;
-    }
-    .about-images img {
-      max-width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    
-    /* ====== Institutions Section ====== */
-    .institutions {
-      padding: 40px 20px;
-      background-color: #f0f8ff;
-      margin: 20px auto;
-      max-width: 1200px;
-      border-radius: 8px;
-    }
-    .institutions h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #28a745;
-    }
-    .institution-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-    .institution {
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-    .institution:hover {
-      transform: translateY(-10px);
-    }
-    .institution h3 {
-      color: #0056b3;
-      margin-top: 10px;
-    }
-    .institution p {
-      font-size: 14px;
-      color: #333;
-      line-height: 1.6;
-    }
-    .image-container {
-      position: relative;
-      overflow: hidden;
-      border-radius: 8px;
-      margin-bottom: 15px;
-    }
-    .image-container img {
-      width: 100%;
-      transition: transform 0.3s ease;
-    }
-    .image-container:hover img {
-      transform: scale(1.1);
-    }
-    .image-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .image-container:hover .image-overlay {
-      opacity: 1;
-    }
-    
-    /* ====== Mane Section ====== */
-    .mane {
-      text-align: center;
-      padding: 60px 20px;
-      background-color: #115EF7;
-      color: #fff;
-    }
-    
-    /* ====== Footer ====== */
-    footer {
-      background-color: #33485c;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 20px;
-    }
-    footer p {
-      margin: 10px 0;
-    }
-    .social-icons a {
-      margin: 0 10px;
-      font-size: 1.5em;
-      transition: color 0.3s ease;
-    }
-    .social-icons a:hover {
-      color: #28a745;
-    }
-    .contact-links {
-      margin: 10px 0;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-    .contact-links a {
-      color: white;
-      font-size: 1em;
-      transition: color 0.3s ease;
-    }
-    .contact-links a:hover {
-      color: #28a745;
-    }
-    
-    /* ====== Responsive Styles ====== */
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        background-color: #33485c;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-      }
-      nav a {
-        padding: 10px;
-        text-align: center;
-      }
-      .menu-icon {
-        display: block;
-      }
-      .about-content {
-        flex-direction: column;
-      }
-    }
+    /* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+nav {
+  background: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+section {
+  padding: 20px;
+  margin: 20px 0;
+}
+
+h1, h2, h3 {
+  color: #333;
+}
+
+.quick-links {
+  margin: 20px 0;
+}
+
+.quick-links a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #007BFF;
+}
+
+form input, form textarea, form button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+form button {
+  background: #007BFF;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #0056b3;
+}
   </style>
 </head>
 <body>
-  <!-- Header & Navbar -->
-  <header>
-    <div class="logo">
-      <a href="Home.html"><img src="images/logo2.png" alt="Darul Arqam Dawah Logo" /></a>
-      
-    </div>
-    <nav id="nav-menu">
-      <a href="Home.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="ContactUS.html">Contact Us</a>
-      <a href="Registr.html">Register</a>
-    </nav>
-    <div class="menu-icon" id="menu-icon">
-      <i class="fas fa-bars"></i>
-    </div>
-    <div class="auth-buttons">
-      <a href="Login.html">Login</a>
-    </div>
-  </header>
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#admissions">Admissions</a></li>
+      <li><a href="#academics">Academics</a></li>
+      <li><a href="#student-life">Student Life</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#supplies">School Supplies</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Spreading the Message of Islam</h1>
-    <h2>Your trusted source for authentic Islamic knowledge</h2>
-  </section>
-
-  <!-- Intro & Apply Now -->
-  <section class="intro">
-    <h2>Apply for Our Course</h2>
-    <p>Our comprehensive course is designed to help you achieve your goals with expert guidance and practical strategies.</p>
-  </section>
-  <div class="apply-now">
-    <a href="Registr.html">Apply Now</a>
-  </div>
-
-  <!-- Services Section -->
-  <section id="services">
-    <h2>Explore Our Offerings</h2>
-    <div class="services">
-      <div class="service">
-        <i class="fas fa-quran"></i>
-        <h3>Quran Classes</h3>
-        <p>Learn to read and understand the Quran with expert guidance.</p>
-      </div>
-      <div class="service">
-        <i class="fas fa-book-reader"></i>
-        <h3>Islamic Lectures</h3>
-        <p>Join our lectures to deepen your understanding of Islamic teachings.</p>
-      </div>
-      <div class="service">
-        <i class="fas fa-hands-helping"></i>
-        <h3>Community Support</h3>
-        <p>We provide support and resources to help the community thrive.</p>
-      </div>
-      <div class="service">
-        <i class="fas fa-hand-holding-heart"></i>
-        <h3>Charity Programs</h3>
-        <p>Participate in our charity programs to help those in need.</p>
-      </div>
-      <div class="service">
-        <i class="fas fa-users"></i>
-        <h3>Youth Programs</h3>
-        <p>Engage in activities designed to empower and educate the youth.</p>
-      </div>
+  <!-- Home Page -->
+  <section id="home">
+    <h1>Welcome to Our School</h1>
+    <p>Your journey to excellence begins here!</p>
+    <div class="quick-links">
+      <a href="#login">Login</a>
+      <a href="#contact">Contact Us</a>
+      <a href="#faqs">FAQs</a>
+    </div>
+    <div class="news">
+      <h2>Latest News & Announcements</h2>
+      <p>Stay updated with the latest happenings at our school.</p>
+    </div>
+    <div class="events">
+      <h2>Upcoming Events</h2>
+      <p>Check out our calendar for exciting events.</p>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section class="about">
+  <!-- About Us Page -->
+  <section id="about">
     <h2>About Us</h2>
-    <div class="about-content">
-      <div class="about-text">
-        <p>
-          Darul Arqam Dawah is dedicated to providing valuable resources, educational programs, and events to help individuals deepen their understanding of Islam. Join us on this journey of learning and self-discovery.
-        </p>
-        <a href="about.html" class="more-link">Read More</a>
-      </div>
-      <div class="about-images">
-        <img src="images/wedding..jpg" alt="About Image" />
-      </div>
+    <p>Learn about our history, mission, and facilities.</p>
+    <div class="content">
+      <h3>School History</h3>
+      <p>Founded in 1990, our school has a rich tradition of excellence.</p>
+      <h3>Mission & Vision</h3>
+      <p>To empower students with knowledge and skills for the future.</p>
+      <h3>Leadership & Staff</h3>
+      <p>Meet our dedicated team of educators.</p>
+      <h3>Facilities</h3>
+      <p>Explore our state-of-the-art campus.</p>
     </div>
   </section>
 
-  <!-- Institutions Section -->
-  <section class="institutions">
-    <h2>Our Associated Institutions</h2>
-    <div class="institution-list">
-      <div class="institution">
-        <div class="image-container">
-          <img src="images/burajiru.jpg" alt="BURA JIREGNA School" />
-          <div class="image-overlay"><h3>BURA JIREGNA School</h3></div>
-        </div>
-        <p>
-          BURA JIREGNA School is dedicated to providing quality education and fostering Islamic values among students. Our mission is to nurture young minds and prepare them for a successful future.
-        </p>
-      </div>
-      <div class="institution">
-        <div class="image-container">
-          <img src="images/Kabab.jpg" alt="Markaza Kabab Arati" />
-          <div class="image-overlay"><h3>Markaza Kabab Arati</h3></div>
-        </div>
-        <p>
-          Markaza Kabab Arati is a community center focused on Islamic teachings, community development, and social welfare programs. We aim to empower individuals and strengthen the community.
-        </p>
-      </div>
+  <!-- Admissions Page -->
+  <section id="admissions">
+    <h2>Admissions</h2>
+    <p>Join our school community today!</p>
+    <div class="content">
+      <h3>Admission Requirements</h3>
+      <p>Check the eligibility criteria for enrollment.</p>
+      <h3>Application Process</h3>
+      <p>Step-by-step guide to applying.</p>
+      <h3>Downloadable Forms</h3>
+      <p>Access and download necessary forms.</p>
+      <h3>Tuition & Fees</h3>
+      <p>Learn about our fee structure.</p>
+      <h3>Scholarships</h3>
+      <p>Explore financial aid opportunities.</p>
     </div>
   </section>
 
-  <!-- Mane Section -->
-  <section class="mane">
-    <h1>Today's action is tomorrow's change</h1>
-    <p>
-      Every journey begins with one decision. Take that step today and start moving toward the life you envision.
-    </p>
+  <!-- Academics Page -->
+  <section id="academics">
+    <h2>Academics</h2>
+    <p>Discover our curriculum and academic programs.</p>
+    <div class="content">
+      <h3>Curriculum Overview</h3>
+      <p>Learn about our comprehensive curriculum.</p>
+      <h3>Subjects & Courses</h3>
+      <p>Explore the subjects we offer.</p>
+      <h3>Faculty Profiles</h3>
+      <p>Meet our experienced teachers.</p>
+      <h3>Academic Calendar</h3>
+      <p>Stay updated with important dates.</p>
+      <h3>Examinations</h3>
+      <p>Understand our grading system.</p>
+    </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>Follow Us:</p>
-    <div class="social-icons">
-      <a href="https://t.me/darul_arqam" target="_blank"><i class="fa-brands fa-telegram"></i></a>
-      <a href="https://facebook.com/darul_arqam" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-      <a href="https://youtube.com/darul_arqam" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-      <a href="https://tiktok.com/darul_arqam" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+  <!-- Student Life Page -->
+  <section id="student-life">
+    <h2>Student Life</h2>
+    <p>Experience a vibrant school life.</p>
+    <div class="content">
+      <h3>Clubs & Activities</h3>
+      <p>Join our diverse range of clubs.</p>
+      <h3>Sports & Competitions</h3>
+      <p>Participate in sports and competitions.</p>
+      <h3>Events & Trips</h3>
+      <p>Engage in exciting school events and trips.</p>
+      <h3>Student Achievements</h3>
+      <p>Celebrate our students' success.</p>
     </div>
-    <p>Contact Us:</p>
-    <div class="contact-links">
-      <a href="tel:+251985252568"><i class="fas fa-phone"></i> +251985252568</a>
-      <a href="mailto:info@darularqam.com"><i class="fas fa-envelope"></i> info@darularqam.com</a>
-    </div>
-    <p>&copy; 2025 Darul Arqam Dawah. All rights reserved.</p>
-    <p>Powered by Mahamisha Oro</p>
-  </footer>
+  </section>
 
-  <script>
-    // Toggle Mobile Menu
-    document.getElementById('menu-icon').addEventListener('click', function () {
-      var nav = document.getElementById('nav-menu');
-      if (nav.style.display === 'flex') {
-        nav.style.display = 'none';
-      } else {
-        nav.style.display = 'flex';
-      }
-    });
-    
-    // Optional: Add click event for services
-    document.querySelectorAll('.service').forEach(service => {
-      service.addEventListener('click', () => {
-        const serviceName = service.querySelector('h3').innerText;
-        alert('You clicked on: ' + serviceName);
-      });
-    });
+  <!-- Resources Page -->
+  <section id="resources">
+    <h2>Resources</h2>
+    <p>Access valuable learning resources.</p>
+    <div class="content">
+      <h3>Library & E-books</h3>
+      <p>Explore our digital and physical library.</p>
+      <h3>Timetable & Schedules</h3>
+      <p>View class schedules.</p>
+      <h3>Study Materials</h3>
+      <p>Download past papers and study guides.</p>
+      <h3>E-learning Portal</h3>
+      <p>Login to access online learning.</p>
+    </div>
+  </section>
+
+  <!-- School Supplies Page -->
+  <section id="supplies">
+    <h2>School Supplies</h2>
+    <p>Get ready for the school year.</p>
+    <div class="content">
+      <h3>Required Supplies</h3>
+      <p>Check the list of supplies for each grade.</p>
+      <h3>Uniform & Dress Code</h3>
+      <p>Learn about our dress code policy.</p>
+      <h3>Bookstore</h3>
+      <p>Purchase books and supplies online.</p>
+      <h3>Lab & Sports Equipment</h3>
+      <p>Find out what you need for labs and sports.</p>
+    </div>
+  </section>
+
+  <!-- Contact Page -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>We'd love to hear from you!</p>
+    <div class="content">
+      <h3>Address</h3>
+      <p>123 School Street, City, Country</p>
+      <h3>Phone & Email</h3>
+      <p>Phone: +123 456 7890 | Email: info@school.com</p>
+      <h3>Social Media</h3>
+      <p>Follow us on Facebook, Twitter, and Instagram.</p>
+      <h3>Contact Form</h3>
+      <form id="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <script src="script.js">
+    // Example JavaScript for form submission
+document.getElementById('contact-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  alert('Thank you for contacting us! We will get back to you soon.');
+  // You can add AJAX or backend integration here
+});
   </script>
 </body>
 </html>
