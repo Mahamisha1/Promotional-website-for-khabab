@@ -239,3 +239,388 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
   </script>
 </body>
 </html>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markaza kabab binu Arat- Contact Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
+        header {
+            background-color: #33485c;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-nav {
+            display: flex;
+            align-items: center;
+        }
+
+        header img {
+            height: 50px;
+            margin-right: 20px;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: white;
+            padding: 5px 10px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #28a745;
+            border-radius: 5px;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .auth-buttons a {
+            background-color: #28a745;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .auth-buttons a:hover {
+            background-color: #218838;
+        }
+
+        /* Hamburger Menu */
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Contact Page Styles */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+        }
+
+        .contact-info h2 {
+            color: #0056b3;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #1e4d80;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #153a5e;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #33485c;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons i {
+            font-size: 1.5em;
+            margin: 0 10px;
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons i:hover {
+            color: #28a745;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #33485c;
+                position: absolute;
+                top: 60px;
+                left: 0;
+            }
+
+            nav a {
+                padding: 10px;
+                text-align: center;
+            }
+
+            .auth-buttons {
+                display: none;
+            }
+
+            .logo-nav {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+        footer .contact-links {
+            margin: 10px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        footer .contact-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s ease;
+        }
+
+        footer .contact-links a:hover {
+            color: #28a745;
+        }
+
+        footer .contact-links i {
+            margin-right: 10px;
+            color: #28a745;
+        }
+         /* Floating Message Button */
+         .floating-message-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: steelblue;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .floating-message-btn:hover {
+            background-color: #218838;
+        }
+
+        /* Message Box */
+        .message-box {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 300px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            display: none;
+            z-index: 1000;
+        }
+
+        .message-box h3 {
+            margin-top: 0;
+            color: #0056b3;
+        }
+
+        .message-box textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+
+        .message-box button {
+            margin-top: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .message-box button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-nav">
+            <img src="images/logo.png"alt="Darul Arqam Dawah Logo">
+            <nav id="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="Services.html">Services</a>
+                <a href="Contact.html">Contact Us</a>
+                <a href="Registr.html">Register</a>
+            </nav>
+            <div class="menu-icon" id="menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        <div class="auth-buttons">
+            <!-- <a href="Signup.html">Sign Up</a> -->
+            <a href="login.html">Login</a>
+        </div>
+              <!-- Floating Message Button -->
+    <button class="floating-message-btn" id="floating-message-btn">
+        <i class="fas fa-comment-dots"></i>
+    </button>
+
+    <!-- Message Box -->
+    <div class="message-box" id="message-box">
+        <h3>Send Us a Message</h3>
+        <textarea placeholder="Type your message here..."></textarea>
+        <button onclick="sendMessage()">Send</button>
+    </div>
+    </header>
+
+    <div class="container">
+        <section class="contact-info">
+            <h2>Get in Touch</h2>
+            <p><i class="fas fa-envelope"></i> info@darularqam.com</p>
+            <p><i class="fas fa-phone"></i>  +251985252568</p>
+            <p><i class="fas fa-map-marker-alt"></i> Bole,Adama</p>
+        </section>
+
+        <form action="submit_contact.php" method="POST">
+            <h2>Send Us a Message</h2>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>Follow Us:</p>
+        <div class="social-icons">
+            <a href="https://t.me/+6PKgSzINV0VkOTI0" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://www.facebook.com/share/159vkALX6x/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.youtube.com/@Markaza1442" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@khabbaabibnu4?_t=ZM-8uGHS2mivoc&_r=1" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://chat.whatsapp.com/G4oRH4dfCz8IJ3r9AFDHkj" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+        <p>Contact Us:</p>
+        <div class="contact-links">
+            <a href="tel:+251985252568"><i class="fas fa-phone"></i>+251938212783</a>
+           
+        </div>
+        <p>&copy; 20252025 Markaza kabab Arat. All rights reserved.</p>
+        <p>Powered by Mahamisha Oro</p>
+    </footer>
+
+    <script>
+        // Toggle the navigation menu on mobile devices
+        document.getElementById('menu-icon').addEventListener('click', function() {
+            var navMenu = document.getElementById('nav-menu');
+            if (navMenu.style.display === 'flex') {
+                navMenu.style.display = 'none';
+            } else {
+                navMenu.style.display = 'flex';
+            }
+        });
+        // Toggle Message Box
+    const floatingMessageBtn = document.getElementById('floating-message-btn');
+        const messageBox = document.getElementById('message-box');
+
+        floatingMessageBtn.addEventListener('click', () => {
+            messageBox.style.display = messageBox.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // Send Message Function
+        function sendMessage() {
+            const message = document.querySelector('.message-box textarea').value;
+            if (message.trim() !== '') {
+                alert('Message sent: ' + message);
+                document.querySelector('.message-box textarea').value = ''; // Clear the textarea
+                messageBox.style.display = 'none'; // Hide the message box
+            } else {
+                alert('Please enter a message.');
+            }
+        }
+    </script>
+</body>
+</html>
