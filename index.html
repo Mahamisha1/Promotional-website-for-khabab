@@ -717,6 +717,170 @@
                 margin-left: 0;
             }
         }
+         /* About Section */
+    .about {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+    
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 4px;
+      background: var(--accent);
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    
+    .about-img {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .about-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: var(--transition);
+    }
+    
+    .about-img:hover img {
+      transform: scale(1.05);
+    }
+    
+    .about-text h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+    }
+    
+    .about-text p {
+      margin-bottom: 1.5rem;
+    }
+    
+    /* Personal Info Section */
+    .personal-info {
+      background: linear-gradient(rgba(139, 0, 0, 0.9), rgba(139, 0, 0, 0.9)), 
+                  url('https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover;
+      padding: 5rem 2rem;
+      color: var(--white);
+      text-align: center;
+    }
+    
+    .info-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 3rem auto 0;
+    }
+    
+    .info-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      padding: 2rem;
+      transition: var(--transition);
+    }
+    
+    .info-card:hover {
+      transform: translateY(-10px);
+      background: rgba(255, 255, 255, 0.2);
+    }
+    
+    .info-card i {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    
+    .info-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    /* Contact Section */
+    .contact {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .contact-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    
+    .contact-item i {
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+    
+    .contact-text h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .contact-form .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .contact-form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .contact-form textarea {
+      height: 150px;
+      resize: vertical;
+    }
+    
     </style>
 </head>
 <body>
@@ -729,7 +893,7 @@
             </div>
             
             <div class="top-contact">
-                <a href="tel:+251912345678"><i class="fas fa-phone"></i> +251 912 345 678</a>
+                <a href="tel:+251912345678"><i class="fas fa-phone"></i> +251 938 212 783</a>
                 </div>
             
             <nav>
@@ -738,6 +902,8 @@
                     <li><a href="#">Programs</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="Registr.html">Registr</a></li>
+             
                 </ul>
             </nav>
             
@@ -751,13 +917,34 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Islamic Knowledge for Lifelong Learning</h1>
-            <p>Join our comprehensive programs to deepen your understanding of Quran, Hadith, and Islamic teachings in a supportive community environment.</p>
+            <p></p>
             <div class="btn-container">
                 <a href="Register.html" class="btn">Enroll Now</a>
                 <a href="about.html" class="btn btn-outline">Learn More</a>
             </div>
         </div>
     </section>
+
+     <!-- About Section -->
+  <section class="about" id="about">
+    <div class="section-title animate">
+      <h2>Our Story</h2>
+      <p>Discover the tradition behind our flavors</p>
+    </div>
+    
+    <div class="about-content">
+      <div class="about-text animate" style="animation-delay: 0.2s">
+        <h3>Since 1985: A Family Tradition</h3>
+        <p>Markaza Kabab Arat was founded by Arat Mohammed in 1985, bringing authentic Middle Eastern flavors to our community. What started as a small family-run eatery has grown into a beloved culinary destination.</p>
+        <p>Our secret lies in the traditional recipes passed down through generations, using only the freshest ingredients and time-honored cooking techniques.</p>
+        <p>Today, we continue this legacy with the same passion and commitment to quality that has defined us for over three decades.</p>
+      </div>
+      
+      <div class="about-img animate" style="animation-delay: 0.4s">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Our Restaurant">
+      </div>
+    </div>
+  </section>
     
     <!-- Programs Section -->
     <section class="container">
@@ -768,7 +955,7 @@
         <div class="programs-container">
             <div class="program-card">
                 <div class="program-img">
-                    <img src="https://images.unsplash.com/photo-1564121211835-e88c852648ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Daa'imman Qubee Barachuu">
+                    <img src="C:\Users\ALL Atoz\Desktop\Darul Arqam\images\wedding..jpg" alt="Daa'imman Qubee Barachuu">
                 </div>
                 <div class="program-content">
                     <h3>Daa'imman Qubee Barachuu</h3>
@@ -796,11 +983,11 @@
             
             <div class="program-card">
                 <div class="program-img">
-                    <img src="https://images.unsplash.com/photo-1604671801908-6f0c6a092c05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Quraana Ijaan Dubbisuu">
+                    <img src="C:\Users\ALL Atoz\Desktop\Darul Arqam\images\Cardi4.jpg "alt="Quraana Ijaan Dubbisuu">
                 </div>
                 <div class="program-content">
                     <h3>Quraana Ijaan Dubbisuu</h3>
-                    <p>Master the art of Quranic recitation with proper Tajweed rules through our structured curriculum taught by qualified instructors.</p>
+                <p>  Karaa kaarikulamii keenya caaseffama qabuun barsiisota gahumsa qabaniin barsiifamu seera Tajwiida sirrii ta’een ogummaa Qur’aana qara’uu danda’u.</p>
                     <div class="program-meta">
                         <span class="program-level">Intermediate</span>
                         <a href="#" class="program-link">Learn More <i class="fas fa-arrow-right"></i></a>
@@ -810,7 +997,7 @@
             
             <div class="program-card">
                 <div class="program-img">
-                    <img src="https://images.unsplash.com/photo-1571974096035-6d5bb3c6d1f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Hadiisa">
+                    <img src="C:\users\all atoz\Downloads\Telegram Desktop\photo_2025-02-09_22-16-42.jpg" alt="Hadiisa">
                 </div>
                 <div class="program-content">
                     <h3>Hadiisa</h3>
@@ -871,28 +1058,28 @@
     <section class="testimonials">
         <div class="container">
             <div class="section-title">
-                <h2>What Our Students Say</h2>
+                <h2>Waan Barattoonni Keenya jedhan</h2>
             </div>
             
             <div class="testimonial-container">
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>"The Quran recitation program transformed my relationship with the Quran. The teachers are patient and knowledgeable, making complex rules easy to understand."</p>
+                        <p>""Sagantaan Qur'aana qara'uu hariiroo ani Qur'aana waliin qabu jijjiire. Barsiisonni obsaa fi beekumsa kan qaban yoo ta'u, seera walxaxaa salphaatti akka hubatamu taasisa."</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
-                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Aisha Mohamed">
+                            <img src="C:\Users\ALL Atoz\Downloads\Telegram Desktop\chaltu adam.jpg" alt="Aisha Mohamed">
                         </div>
                         <div class="author-info">
-                            <h4>Aisha Mohamed</h4>
-                            <p>Quran Student</p>
+                            <h4>Chaltu Adam</h4>
+                            <p>Barattuu Qur'aanaa</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>"As a working professional, the flexible schedule of the Hadith classes allowed me to deepen my Islamic knowledge without compromising my job."</p>
+                        <p>""Sagantaan Qur'aana qara'uu hariiroo ani Qur'aana waliin qabu jijjiire. Barsiisonni obsaa fi beekumsa kan qaban yoo ta'u, seera walxaxaa salphaatti akka hubatamu taasisa."</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
@@ -962,7 +1149,7 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="contact-text">
-                            <a href="https://goo.gl/maps/example" target="_blank">Arati Town, Oromia Region, Ethiopia</a>
+                            <a href="https://goo.gl/maps/example" target="_blank">Bole,Adama,Oromia, Ethiopia</a>
                         </div>
                     </div>
                     
@@ -971,8 +1158,8 @@
                             <i class="fas fa-phone"></i>
                         </div>
                         <div class="contact-text">
-                            <a href="tel:+251912345678">+251 912 345 678</a><br>
-                            <a href="tel:+251911234567">+251 911 234 567</a>
+                            <a href="tel:+251912345678">+251 938 212 783</a><br>
+                            <a href="tel:+251911234567">+251 927 647 495</a>
                         </div>
                     </div>
                     
