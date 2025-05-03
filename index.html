@@ -28,6 +28,7 @@
             background-color: var(--light);
             color: var(--text);
             line-height: 1.6;
+            overflow-x: hidden;
         }
         
         .arabic-text {
@@ -53,6 +54,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
         }
         
         .logo {
@@ -123,11 +125,65 @@
             color: var(--white);
             font-size: 1.5rem;
             cursor: pointer;
+            z-index: 1001;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .mobile-menu.active {
+            display: flex;
+            opacity: 1;
+            pointer-events: all;
+        }
+        
+        .mobile-menu ul {
+            list-style: none;
+            text-align: center;
+        }
+        
+        .mobile-menu li {
+            margin: 20px 0;
+        }
+        
+        .mobile-menu a {
+            color: var(--white);
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu a:hover {
+            color: var(--accent);
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
         }
         
         /* Hero Section */
         .hero {
-            background: url('https://images.unsplash.com/photo-1564121211835-e88c852648ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            background: url("images/hed photo.jpg") no-repeat center center/cover;
             height: 500px;
             display: flex;
             align-items: center;
@@ -631,6 +687,125 @@
             transform: translateY(0);
         }
         
+        /* About Section */
+        .about {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Personal Info Section */
+        .personal-info {
+            background: linear-gradient(rgba(139, 0, 0, 0.9), rgba(139, 0, 0, 0.9)), 
+                        url(' C:\Users\ALL Atoz\Desktop\Darul Arqam\images\hed photo.jpg') center/cover;
+            padding: 5rem 2rem;
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+        }
+        
+        .info-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .info-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        .info-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
         /* Responsive Design */
         @media (max-width: 992px) {
             .hero h1 {
@@ -640,23 +815,19 @@
             .top-contact {
                 display: none;
             }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-img {
+                order: -1;
+            }
         }
         
         @media (max-width: 768px) {
             nav ul {
                 display: none;
-                position: absolute;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background-color: var(--primary);
-                flex-direction: column;
-                padding: 20px;
-                gap: 15px;
-            }
-            
-            nav ul.show {
-                display: flex;
             }
             
             .mobile-menu-btn {
@@ -687,16 +858,16 @@
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
         }
         
         @media (max-width: 576px) {
             .header-container {
-                flex-direction: column;
+                flex-direction: row;
                 gap: 15px;
-            }
-            
-            nav ul {
-                top: 120px;
             }
             
             .hero {
@@ -716,171 +887,44 @@
             .btn-outline {
                 margin-left: 0;
             }
+            
+            .programs-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-container {
+                grid-template-columns: 1fr;
+            }
         }
-         /* About Section */
-    .about {
-      padding: 5rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .section-title {
-      text-align: center;
-      margin-bottom: 3rem;
-      position: relative;
-    }
-    
-    .section-title h2 {
-      font-size: 2.5rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-    
-    .section-title::after {
-      content: '';
-      position: absolute;
-      width: 80px;
-      height: 4px;
-      background: var(--accent);
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    
-    .about-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-    }
-    
-    .about-img {
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    }
-    
-    .about-img img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transition: var(--transition);
-    }
-    
-    .about-img:hover img {
-      transform: scale(1.05);
-    }
-    
-    .about-text h3 {
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      color: var(--primary);
-    }
-    
-    .about-text p {
-      margin-bottom: 1.5rem;
-    }
-    
-    /* Personal Info Section */
-    .personal-info {
-      background: linear-gradient(rgba(139, 0, 0, 0.9), rgba(139, 0, 0, 0.9)), 
-                  url('https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover;
-      padding: 5rem 2rem;
-      color: var(--white);
-      text-align: center;
-    }
-    
-    .info-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 3rem auto 0;
-    }
-    
-    .info-card {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border-radius: 10px;
-      padding: 2rem;
-      transition: var(--transition);
-    }
-    
-    .info-card:hover {
-      transform: translateY(-10px);
-      background: rgba(255, 255, 255, 0.2);
-    }
-    
-    .info-card i {
-      font-size: 2.5rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-    
-    .info-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-    
-    /* Contact Section */
-    .contact {
-      padding: 5rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .contact-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-    }
-    
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-    
-    .contact-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-    
-    .contact-item i {
-      font-size: 1.5rem;
-      color: var(--primary);
-    }
-    
-    .contact-text h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
-    
-    .contact-form .form-group {
-      margin-bottom: 1.5rem;
-    }
-    
-    .contact-form label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-    }
-    
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 12px 15px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      font-family: 'Poppins', sans-serif;
-    }
-    
-    .contact-form textarea {
-      height: 150px;
-      resize: vertical;
-    }
-    
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        /* Scroll Reveal Animation */
+        [data-scroll] {
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+        
+        [data-scroll="in"] {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        [data-scroll="out"] {
+            opacity: 0;
+        }
     </style>
 </head>
 <body>
@@ -893,8 +937,8 @@
             </div>
             
             <div class="top-contact">
-                <a href="tel:+251 938 212 783"><i class="fas fa-phone"></i> +251 938 212 783</a>
-                </div>
+                <a href="tel:+251938212783"><i class="fas fa-phone"></i> +251 938 212 783</a>
+            </div>
             
             <nav>
                 <ul id="navMenu">
@@ -903,7 +947,6 @@
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="Registr.html">Registr</a></li>
-             
                 </ul>
             </nav>
             
@@ -911,40 +954,54 @@
                 <i class="fas fa-bars"></i>
             </button>
         </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <span class="close-btn" id="closeMenuBtn">&times;</span>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="#">Programs</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="Registr.html">Registr</a></li>
+            </ul>
+        </div>
     </header>
     
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
+            <p>BAGA NAGAYAN GARA MARKAZA KABAB DHUFTAN</p>
+            <h2>أهلا ومرحبا بكم في مركز الكباب</h2>
             <h1>Islamic Knowledge for Lifelong Learning</h1>
             <p></p>
             <div class="btn-container">
-                <a href="Register.html" class="btn">Enroll Now</a>
+                <a href="Register.html" class="btn">Amma galmaawi</a>
                 <a href="about.html" class="btn btn-outline">Learn More</a>
             </div>
         </div>
     </section>
 
      <!-- About Section -->
-  <section class="about" id="about">
-    <div class="section-title animate">
-      <h2>Our Story</h2>
-      <p>Discover the tradition behind our flavors</p>
-    </div>
-    
-    <div class="about-content">
-      <div class="about-text animate" style="animation-delay: 0.2s">
-        <h3></h3>
-        <p>.</p>
-        <p>.</p>
-        <p>.</p>
-      </div>
-      
-      <div class="about-img animate" style="animation-delay: 0.4s">
-        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Our Restaurant">
-      </div>
-    </div>
-  </section>
+    <section class="about" id="about">
+        <div class="section-title animate">
+            <h2>Our Story</h2>
+            <p>Discover the tradition behind our flavors</p>
+        </div>
+        
+        <div class="about-content">
+            <div class="about-text animate" style="animation-delay: 0.2s">
+                <h3></h3>
+                <p>.</p>
+                <p>.</p>
+                <p>.</p>
+            </div>
+            
+            <div class="about-img animate" style="animation-delay: 0.4s">
+                <img src="images/fuad photo.jpg" alt="Our Restaurant">
+            </div>
+        </div>
+    </section>
     
     <!-- Programs Section -->
     <section class="container">
@@ -955,7 +1012,7 @@
         <div class="programs-container">
             <div class="program-card">
                 <div class="program-img">
-                    <img src="C:\Users\ALL Atoz\Desktop\Darul Arqam\images\wedding..jpg" alt="Daa'imman Qubee Barachuu">
+                    <img src="images/wedding..jpg" alt="Daa'imman Qubee Barachuu">
                 </div>
                 <div class="program-content">
                     <h3>Daa'imman Qubee Barachuu</h3>
@@ -983,11 +1040,11 @@
             
             <div class="program-card">
                 <div class="program-img">
-                    <img src="C:\Users\ALL Atoz\Desktop\Darul Arqam\images\Cardi4.jpg "alt="Quraana Ijaan Dubbisuu">
+                    <img src="images/Qur'ana ijan.jpg" alt="Quraana Ijaan Dubbisuu">
                 </div>
                 <div class="program-content">
                     <h3>Quraana Ijaan Dubbisuu</h3>
-                <p>  Karaa kaarikulamii keenya caaseffama qabuun barsiisota gahumsa qabaniin barsiifamu seera Tajwiida sirrii ta’een ogummaa Qur’aana qara’uu danda’u.</p>
+                    <p>Karaa kaarikulamii keenya caaseffama qabuun barsiisota gahumsa qabaniin barsiifamu seera Tajwiida sirrii ta'een ogummaa Qur'aana qara'uu danda'u.</p>
                     <div class="program-meta">
                         <span class="program-level">Intermediate</span>
                         <a href="#" class="program-link">Learn More <i class="fas fa-arrow-right"></i></a>
@@ -997,7 +1054,7 @@
             
             <div class="program-card">
                 <div class="program-img">
-                    <img src="C:\users\all atoz\Downloads\Telegram Desktop\photo_2025-02-09_22-16-42.jpg" alt="Hadiisa">
+                    <img src="images/kabab2.jpg" alt="Hadiisa">
                 </div>
                 <div class="program-content">
                     <h3>Hadiisa</h3>
@@ -1064,11 +1121,11 @@
             <div class="testimonial-container">
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>""Sagantaan Qur'aana qara'uu hariiroo ani Qur'aana waliin qabu jijjiire. Barsiisonni obsaa fi beekumsa kan qaban yoo ta'u, seera walxaxaa salphaatti akka hubatamu taasisa."</p>
+                        <p>"Sagantaan Qur'aana qara'uu hariiroo ani Qur'aana waliin qabu jijjiire. Barsiisonni obsaa fi beekumsa kan qaban yoo ta'u, seera walxaxaa salphaatti akka hubatamu taasisa."</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
-                            <img src="C:\Users\ALL Atoz\Downloads\Telegram Desktop\chaltu adam.jpg" alt="Aisha Mohamed">
+                            <img src="images/chaltu adam.jpg" alt="Aisha Mohamed">
                         </div>
                         <div class="author-info">
                             <h4>Chaltu Adam</h4>
@@ -1079,7 +1136,7 @@
                 
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>""Sagantaan Qur'aana qara'uu hariiroo ani Qur'aana waliin qabu jijjiire. Barsiisonni obsaa fi beekumsa kan qaban yoo ta'u, seera walxaxaa salphaatti akka hubatamu taasisa."</p>
+                        <p>"Sagantaan Qur'aana qara'uu hariiroo ani Qur'aana waliin qabu jijjiire. Barsiisonni obsaa fi beekumsa kan qaban yoo ta'u, seera walxaxaa salphaatti akka hubatamu taasisa."</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
@@ -1098,10 +1155,10 @@
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
-                            <img src="C:\Users\ALL Atoz\Pictures\Saved Pictures\IMG_0728.jpg" alt="Khalid Ibrahim">
+                            <img src="images/Mr mahamisha.jpg" alt="Khalid Ibrahim">
                         </div>
                         <div class="author-info">
-                            <h4>Mr.Mohamed Aliyi </h4>
+                            <h4>Mr.Mohamed Aliyi</h4>
                             <p>Du'a Program</p>
                         </div>
                     </div>
@@ -1121,7 +1178,7 @@
                 <div class="contact-dropdown">
                     <button class="dropbtn">Contact Us <i class="fas fa-chevron-down"></i></button>
                     <div class="dropdown-content">
-                        <a href="tel:+251912345678"><i class="fas fa-phone"></i>+251 938 212 783</a>
+                        <a href="tel:+251938212783"><i class="fas fa-phone"></i>+251 938 212 783</a>
                         <a href="mailto:info@markazakababarati.com"><i class="fas fa-envelope"></i> info@markazakababarati.com</a>
                         <a href="https://wa.me/251912345678" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                         <a href="https://goo.gl/maps/example" target="_blank"><i class="fas fa-map-marker-alt"></i> Bole, Adama, Oromia, Ethiopia</a>
@@ -1158,7 +1215,7 @@
                             <i class="fas fa-phone"></i>
                         </div>
                         <div class="contact-text">
-                            <a href="tel:+251912345678">+251 938 212 783</a><br>
+                            <a href="tel:+251938212783">+251 938 212 783</a><br>
                             <a href="tel:+251911234567">+251 927 647 495</a>
                         </div>
                     </div>
@@ -1192,18 +1249,24 @@
     <script>
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navMenu = document.getElementById('navMenu');
+        const closeMenuBtn = document.getElementById('closeMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
         
         mobileMenuBtn.addEventListener('click', function() {
-            navMenu.classList.toggle('show');
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+        });
+        
+        closeMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = ''; // Re-enable scrolling
         });
         
         // Close mobile menu when clicking on a link
-        document.querySelectorAll('nav a').forEach(link => {
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
             link.addEventListener('click', function() {
-                if (window.innerWidth <= 768) {
-                    navMenu.classList.remove('show');
-                }
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
             });
         });
         
@@ -1256,6 +1319,50 @@
             dropdown.addEventListener('mouseleave', function() {
                 chevron.classList.replace('fa-chevron-up', 'fa-chevron-down');
             });
+        });
+        
+        // Scroll reveal animation
+        const scrollElements = document.querySelectorAll('[data-scroll]');
+        
+        const elementInView = (el, dividend = 1) => {
+            const elementTop = el.getBoundingClientRect().top;
+            return (
+                elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+            );
+        };
+        
+        const elementOutofView = (el) => {
+            const elementTop = el.getBoundingClientRect().top;
+            return (
+                elementTop > (window.innerHeight || document.documentElement.clientHeight)
+            );
+        };
+        
+        const displayScrollElement = (element) => {
+            element.setAttribute('data-scroll', 'in');
+        };
+        
+        const hideScrollElement = (element) => {
+            element.setAttribute('data-scroll', 'out');
+        };
+        
+        const handleScrollAnimation = () => {
+            scrollElements.forEach((el) => {
+                if (elementInView(el, 1.25)) {
+                    displayScrollElement(el);
+                } else if (elementOutofView(el)) {
+                    hideScrollElement(el);
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', () => {
+            handleScrollAnimation();
+        });
+        
+        // Initialize scroll animation on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            handleScrollAnimation();
         });
     </script>
 </body>
